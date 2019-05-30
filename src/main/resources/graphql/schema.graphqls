@@ -1,0 +1,43 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  accounts(pageSize: Int, pageNumber: Int): AccountPage
+  accountById(id: ID): Account
+}
+
+type Mutation {
+  createAccount(account: CreateAccount!): Account
+}
+
+input CreateAccount {
+  externalAccountId: String
+  serviceAddressLine1: String
+  serviceAddressLine2: String
+  accountStatus: AccountStatus!
+}
+
+type Account {
+  accountId: ID
+  created: String
+  updated: String
+  version: String
+  externalAccountId: String
+  serviceAddressLine1: String
+  serviceAddressLine2: String
+  accountType: String
+  accountStatus: AccountStatus
+}
+
+type AccountPage {
+  count: Int
+  total: Int
+  accounts: [Account]
+}
+
+enum AccountStatus {
+  CONNECTED,
+  DISCONNECTED,
+}
