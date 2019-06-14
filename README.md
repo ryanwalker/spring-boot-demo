@@ -7,6 +7,14 @@
 
 ```
 
+## Security
+Security configuration can be found in [SecurityConfiguration.java](src/main/java/com/kubra/)
+```bash
+curl --silent --header 'Content-Type: application/json' localhost:8080/hello
+curl --silent --header 'Content-Type: application/json' --user user:pass localhost:8080/hello/user
+curl --silent --header 'Content-Type: application/json' --user admin:pass localhost:8080/hello/admin
+```
+
 ## POST Endpoint
 
 http://localhost:8080/graphql
