@@ -1,8 +1,8 @@
-package com.graphqlprototype;
+package com.kubra.graphql;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.graphqlprototype.models.Account;
-import com.graphqlprototype.models.AccountPage;
+import com.kubra.graphql.models.Account;
+import com.kubra.graphql.models.AccountPage;
 import graphql.schema.DataFetcher;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;

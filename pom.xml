@@ -4,13 +4,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.graphql</groupId>
-  <artifactId>graphql-prototype</artifactId>
+  <groupId>com.kubra</groupId>
+  <artifactId>spring-boot-demo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>graphql-prototype</name>
-  <description>GraphQL Prototype</description>
+  <name>spring-boot-demo</name>
+  <description>Spring Boot Demo</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -22,18 +22,6 @@
   <dependencies>
 
     <dependency>
-      <groupId>com.graphql-java</groupId>
-      <artifactId>graphql-java-tools</artifactId>
-      <version>5.2.4</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.graphql-java</groupId>
-      <artifactId>graphql-spring-boot-starter</artifactId>
-      <version>5.0.2</version>
-    </dependency>
-
-    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
     </dependency>
@@ -43,6 +31,19 @@
       <artifactId>lombok</artifactId>
       <optional>true</optional>
     </dependency>
+
+    <dependency>
+      <groupId>com.kubra.graphql-java</groupId>
+      <artifactId>graphql-java-tools</artifactId>
+      <version>5.2.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.kubra.graphql-java</groupId>
+      <artifactId>graphql-spring-boot-starter</artifactId>
+      <version>5.0.2</version>
+    </dependency>
+
 
   </dependencies>
 

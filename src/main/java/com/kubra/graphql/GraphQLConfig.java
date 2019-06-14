@@ -1,4 +1,4 @@
-package com.graphqlprototype;
+package com.kubra.graphql;
 
 import com.google.common.io.Resources;
 import graphql.schema.GraphQLSchema;
