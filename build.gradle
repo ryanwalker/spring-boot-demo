@@ -17,7 +17,7 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
+//    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter:2.1.2.RELEASE'
     implementation 'org.projectlombok:lombok:1.18.4'
     implementation 'com.graphql-java:graphql-java-tools:5.2.4'
@@ -28,3 +28,13 @@ group = 'com.kubra'
 version = '0.0.1-SNAPSHOT'
 description = 'spring-boot-demo'
 sourceCompatibility = '1.11'
+
+
+// Configure SpringBoot plugin
+bootRun {
+    // Allows debugging
+    jvmArgs = [
+            "-Dspring.output.ansi.enabled=ALWAYS", // Prints in color
+            "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005" // Exposes debug port
+    ]
+}
