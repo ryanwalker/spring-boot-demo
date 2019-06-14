@@ -1,4 +1,4 @@
-# Graphql Demo
+# Spring Boot Demo
 
 ## Run Spring Boot
 
