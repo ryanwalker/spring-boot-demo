@@ -2,12 +2,14 @@ package com.kubra.rest;
 
 import com.kubra.rest.models.Contact;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 import org.springframework.context.MessageSource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -91,16 +94,29 @@ public class ContactsController {
   }
 
   @GetMapping("secret")
-  public ResponseEntity<Contact> secretContact(@RequestHeader(required = false, name = "X-Secret-Code") String xSecretCode) {
+  public ResponseEntity<Contact> secretContact(
+      @RequestHeader(required = false, name = "X-Secret-Code") String xSecretCode,
+      @RequestParam(value = "superSecret", required = false) String superSecret) {
     if (!"42".equals(xSecretCode)) {
       return ResponseEntity.notFound().build();
     }
     Contact secretContact = new Contact();
-    secretContact.setName("James Bond");
+    String name = "James Bond";
 
-    return ResponseEntity.ok(secretContact);
+    if (Objects.nonNull(superSecret)) {
+      name += " (triple agent)";
+    }
+    secretContact.setName(name);
+
+    HttpHeaders headers = new HttpHeaders();
+    headers.put(HttpHeaders.ETAG, Arrays.asList("EEEEEETag"));
+    return ResponseEntity.ok().headers(headers).body(secretContact);
   }
 
+  @GetMapping("illegal")
+  public ResponseEntity illegal() {
+    throw new IllegalArgumentException("Endpoint is bad");
+  }
 
 
 }
