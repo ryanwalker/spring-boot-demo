@@ -1,0 +1,39 @@
+
+#You must enable AND expose actuator endpoints
+management:
+  endpoints:
+    enabled-by-default: true  #enable all
+    web:
+      exposure:
+        include:
+          - '*'               #expose all
+
+
+# Example of how to configure endpoints individually
+#management:
+#  endpoint:
+#    auditevents:
+#      enabled: true
+#    beans:
+#      enabled: true
+#    conditions:
+#      enabled: true
+#    health:
+#      enabled: true
+#    info:
+#      enabled: true
+#  endpoints:
+#    web:
+#      exposure:
+#        include:
+#          - auditevents
+#          - beans
+#          - conditions
+#          - health
+#          - info
+
+# Change actuator web path from `actuator` to `manage`
+#management:
+#  endpoints:
+#    web.base:
+#      path: '/manage'
