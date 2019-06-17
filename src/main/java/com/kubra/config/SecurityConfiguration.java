@@ -34,6 +34,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
     http.authorizeRequests()
         .antMatchers("/hello").permitAll() // This allow users and anonymous
+        .antMatchers("/manage/**").permitAll()
 //        .antMatchers("/hello").anonymous() // This would ONLY allow anonymous, NOT users
         .antMatchers("/hello/user").hasAnyRole("USER", "ADMIN")//, "ADMIN")
         .antMatchers("/hello/admin").hasRole("ADMIN")
