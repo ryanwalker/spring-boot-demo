@@ -1,12 +1,16 @@
 package com.kubra.rest;
 
+import com.kubra.rest.models.Contact;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -49,5 +53,4 @@ public class HelloWorldController {
     body.put(i18n("greeting"), "user");
     return ResponseEntity.ok(body);
   }
-
 }
