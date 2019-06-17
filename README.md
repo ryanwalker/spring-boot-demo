@@ -22,7 +22,7 @@ monitoring, database, health info and much more. It provides a collection of end
 queried to gather info or run actions. Here's a 
 [list of available endpoints](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-endpoints-enabling-endpoints).
 
-#####Actuator Config
+##### Actuator Config
 All actuator endpoints are enabled for this demo. See [application.yml](src/main/resources/application.yml).
 
 Some of the more common endpoints:
