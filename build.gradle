@@ -6,8 +6,9 @@ buildscript {
 }
 plugins {
     id 'java'
-    id "io.spring.dependency-management" version "1.0.7.RELEASE" //TODO - this was needed to find spring boot starters that didn't have declared dependencies
+    //Allows us to not specify versions for dependencies. Pulls in MAVEN BOMs (Bill of Materials)
     id 'org.springframework.boot' version '2.1.3.RELEASE'
+    id "io.spring.dependency-management" version "1.0.7.RELEASE"
 }
 
 repositories {
