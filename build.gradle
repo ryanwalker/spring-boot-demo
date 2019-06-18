@@ -53,6 +53,9 @@ dependencies {
     // GraphQL dependencies
     implementation 'com.graphql-java:graphql-java-tools:5.2.4'
     implementation 'com.graphql-java:graphql-spring-boot-starter:5.0.2'
+
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
 }
 
 // Gradle and IDEA are not playing nice with configuration metadata
