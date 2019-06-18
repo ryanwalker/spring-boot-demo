@@ -26,6 +26,7 @@ queried to gather info or run actions. Here's a
 All actuator endpoints are enabled for this demo. See [application.yml](src/main/resources/application.yml).
 
 Some of the more common endpoints:
+
 ```bash
 http://localhost:8080/actuator/conditions
 http://localhost:8080/actuator/beans
@@ -35,12 +36,21 @@ http://localhost:8080/actuator/health
 
 ## REST Web Services
 REST controllers are annotated with `@RestController`. 
-See [HelloWorldController.java](src/main/java/com/kubra/rest/HelloWorldController.java).
+See [HelloWorldController.java](src/main/java/com/kubra/rest/HelloWorldController.java)
+and [ContactsController.java](src/main/java/com/kubra/rest/ContactsController.java).
 
 ```bash
 curl --silent --header 'Content-Type: application/json' localhost:8080/hello
 curl --silent --header 'Content-Type: application/json' --user user:pass localhost:8080/hello/user
 curl --silent --header 'Content-Type: application/json' --user admin:pass localhost:8080/hello/admin
+
+curl -X "POST" "http://localhost:8080/contacts" \
+     -H 'Content-Type: application/json' \
+     -u 'user:pass' \
+     -d $'{
+  "name": "Bob Builder"
+}'
+
 ```
 HTTP requests/responses are converted to/from Objects using `Jackson`'s `ObjectMapper`. 
 [Object Mapping](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-spring-mvc.html#howto-customize-the-jackson-objectmapper) 
@@ -50,6 +60,7 @@ There is a message file for each desired language. See [messages_fr.properties](
 for example. The locale config can be found in [InternationalizationConfig](src/main/java/com/kubra/config/InternationalizationConfig.java).
 An example of retrieving an internationalized message can be seen in [HelloWorldControlelr.java](src/main/java/com/kubra/rest/HelloWorldController.java)
 `Accept-language` is used to specify the locale:
+
 ```bash
 curl --silent --header 'Content-Type: application/json' --header 'Accept-Language: en' 'localhost:8080/hello'
 curl --silent --header 'Content-Type: application/json' --header 'Accept-Language: es' 'localhost:8080/hello'
