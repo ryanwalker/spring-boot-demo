@@ -6,6 +6,6 @@
 /out/
 
 build/
-gradle
+.gradle
 gradlew
 gradle.bat

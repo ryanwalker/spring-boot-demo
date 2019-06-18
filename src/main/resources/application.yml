@@ -13,8 +13,8 @@ management:
 
 # Example of custom config property handling
 example:
-  string-one: String, the first
-  string-two: String, the second
+  string-one: The first
+  string-two: 2nd
   email: backup@email.com
   my-number: 8849
   map:
