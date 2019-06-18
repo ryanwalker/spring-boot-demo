@@ -2,3 +2,13 @@
 graphql:
   servlet:
     enabled: false
+
+example:
+  string-one: Test first
+  string-two: 2nd
+  email: test@email.com
+  my-number: 1234
+  map:
+    z: Thing1
+    y: Thing2
+    x: Thing3
