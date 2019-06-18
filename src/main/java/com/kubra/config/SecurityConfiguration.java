@@ -38,6 +38,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     http.authorizeRequests()
         .antMatchers("/actuator/**").permitAll()
         .antMatchers("/hello").permitAll() // This allow users and anonymous
+        .antMatchers("/graphql").permitAll() // This allow users and anonymous
 //        .antMatchers("/hello").anonymous() // This would NOT allow any users, only anonymous requests
         .antMatchers("/hello/user").hasAnyRole(USER_ROLE, ADMIN_ROLE)
         .antMatchers("/hello/admin").hasRole(ADMIN_ROLE)
