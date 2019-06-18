@@ -1,0 +1,4 @@
+# Turn off GraphQL for testing
+graphql:
+  servlet:
+    enabled: false
