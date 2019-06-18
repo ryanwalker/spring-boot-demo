@@ -12,10 +12,16 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 )
 public class ExampleValidatedProperties {
 
+  /**
+   * This is string 1
+   */
   @NotBlank
   @Length(max = 10, min = 1)
   private String stringOne;
 
+  /**
+   * This is string 2
+   */
   @NotBlank
   @Length(max = 5, min = 2)
   private String stringTwo;
